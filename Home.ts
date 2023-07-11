@@ -13,5 +13,5 @@ console.log('Albert Einstein once said, “A person who never made a mistake nev
 
 // Point 5 
 var famous_person:string = "Usman Iqbal";
-var message : string = "A person who never made a mistake never tried anything new.";
-console.log (famous_person , message);
+var message : string = "“A person who never made a mistake never tried anything new.”";
+console.log (famous_person , "once said," , message);
