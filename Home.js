@@ -11,3 +11,16 @@ console.log('Albert Einstein once said, “A person who never made a mistake nev
 var famous_person = "Usman Iqbal";
 var message = "“A person who never made a mistake never tried anything new.”";
 console.log(famous_person, "once said,", message);
+// Point 6
+var Personname = "Usman Iqbal";
+console.log("\t", Personname, "\n", Personname);
+// Point 7,8
+console.log(4 + 4);
+console.log(12 - 4);
+console.log(2 * 4);
+console.log(32 / 4);
+// Point 9
+var Favorite_Number = 19;
+console.log("My Favorite Number is ", Favorite_Number);
+// Point 10 
+//Comments are already added for each point 
