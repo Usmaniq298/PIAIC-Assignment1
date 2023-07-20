@@ -1,3 +1,4 @@
+"use strict";
 //Point 1
 console.log("Hello");
 // Point 2
@@ -26,12 +27,12 @@ console.log("My Favorite Number is ", Favorite_Number);
 //Comments are already added for each point 
 //Point 11 
 var names = ["Usman", "Ali", "Kaleem", "Husnain", "Nasir"];
-names.forEach(function (x) {
+names.forEach(x => {
     console.log(x);
 });
 // Point 12
-names.forEach(function (x) {
-    console.log(x, " is my Frien.");
+names.forEach(x => {
+    console.log(x, " is my Friend.");
 });
 // Point 13
 var ModeOfTransportation = ["Airplane", "Train", "Motor Bike", "Bus"];
@@ -58,34 +59,131 @@ for (var i = 0; i < ModeOfTransportation.length; i++) {
 }
 // Point 14
 var guestList = ["Usman", "Ali", "Kaleem", "Husnain", "Nasir"];
+var allGuestList = guestList;
 // Point 15
 var listOfGuestCantAttend = [];
 var indexOfUnableToAttend = guestList.indexOf("Kaleem");
 if (indexOfUnableToAttend !== -1) {
     listOfGuestCantAttend.push(guestList[indexOfUnableToAttend]);
     guestList[indexOfUnableToAttend] = "Yasir";
+    allGuestList.push(guestList[indexOfUnableToAttend]);
 }
 printInvitations(guestList);
 // Point 16
 console.log("We found a bigger dinner table!");
 guestList.unshift("Zeeshan");
-var middleIndex = Math.floor(guestList.length / 2);
+const middleIndex = Math.floor(guestList.length / 2);
 guestList.splice(middleIndex, 0, "Asif");
 guestList.push("Sohail");
 console.log("Updated Guest List:");
 printInvitations(guestList);
 function printInvitations(guests) {
-    guestList.forEach(function (x) {
-        var invitation = "Dear ".concat(x, ", you are cordially invited to dinner. Please join us on Saturday at 7 PM.");
+    guestList.forEach(x => {
+        const invitation = `Dear ${x}, you are cordially invited to dinner. Please join us on Saturday at 7 PM.`;
         console.log(invitation);
+    });
+    guestList.forEach(x => {
+        var found = false;
+        allGuestList.forEach(y => {
+            if (y == x) {
+                found = true;
+            }
+        });
+        if (!found) {
+            allGuestList.push(x);
+        }
     });
 }
 //Point 17
+console.log("We are Sorry, We can invite only two people for dinner! ");
 while (guestList.length > 2) {
-    console.log("Dear ".concat(guestList[guestList.length - 1], ", We are Sorry we can not invite you. Thanks For understand."));
+    console.log(`Dear ${guestList[guestList.length - 1]}, We are Sorry we can not invite you. Thanks For understand.`);
     guestList.pop();
 }
 printInvitations(guestList);
-var newname = names.sort(function (a, b) { return b.localeCompare(a); });
-console.log(newname);
-console.log(names.sort(function (a, b) { return a.localeCompare(b); }));
+// Point 18
+var listOfPlace = ["Al-Aqsa Mosque", "Giza Necropolis", "Aswan", "Kashmir", "Aya sophia"];
+console.log(listOfPlace);
+console.log([...listOfPlace].sort());
+console.log(listOfPlace);
+console.log([...listOfPlace].sort().reverse());
+listOfPlace.reverse();
+console.log(listOfPlace);
+listOfPlace.reverse();
+console.log(listOfPlace);
+listOfPlace.sort((a, b) => a.localeCompare(b));
+console.log(listOfPlace);
+listOfPlace.sort((a, b) => b.localeCompare(a));
+console.log(listOfPlace);
+// Point 19 
+console.log(allGuestList);
+// Point 20
+var language = ["C#", "Javascript", "TypeScript", ".Net", "React"];
+var objLanguage = [{
+        name: "C#"
+    },
+    {
+        name: "JavaScript"
+    }
+];
+// Point 23
+let car = 'subaru';
+console.log("Is car == 'subaru'? I predict true.");
+console.log(car == 'subaru');
+console.log("Is car == 'ford'? I predict false.");
+console.log(car == 'ford');
+console.log("Is car != 'honda'? I predict true.");
+console.log(car != 'honda');
+console.log("Is car != 'subaru'? I predict false.");
+console.log(car != 'subaru');
+console.log("Is car === 'subaru'? I predict true.");
+console.log(car === 'subaru');
+console.log("Is car === 'Subaru'? I predict false.");
+console.log(car === 'Subaru');
+console.log("Is car !== 'toyota'? I predict true.");
+console.log(car !== 'toyota');
+console.log("Is car !== 'subaru'? I predict false.");
+console.log(car !== 'subaru');
+console.log("Is car > 'ford'? I predict true.");
+console.log(car > 'ford');
+console.log("Is car < 'audi'? I predict false.");
+console.log(car < 'audi');
+// Point 25
+// Tests for equality and inequality with strings
+let myName = "Usman";
+console.log("Is name equal to 'Usman'? I predict true.");
+console.log(myName == "Usman");
+console.log("Is name not equal to 'Usman'? I predict true.");
+console.log(myName != "Iqbal");
+// Tests using the lowercase function
+let myMessage = "HELLO";
+console.log("Is message in lowercase equal to 'hello'? I predict true.");
+console.log(myMessage.toLowerCase() == "hello");
+// Numerical tests
+let x = 5;
+let y = 10;
+console.log("Is x less than y? I predict true.");
+console.log(x < y);
+console.log("Is x greater than or equal to 5? I predict true.");
+console.log(x >= 5);
+console.log("Is x + y equal to 15? I predict true.");
+console.log(x + y == 15);
+// Tests using "and" and "or" operators
+let isSunny = true;
+let isWarm = false;
+console.log("Is it sunny and warm? I predict false.");
+console.log(isSunny && isWarm);
+console.log("Is it sunny or warm? I predict true.");
+console.log(isSunny || isWarm);
+// Test whether an item is in an array
+let fruits = ["apple", "banana", "orange"];
+console.log("Is 'apple' in the fruits array? I predict true.");
+console.log(fruits.includes("apple"));
+// Test whether an item is not in an array
+console.log("Is 'grape' not in the fruits array? I predict true.");
+console.log(!fruits.includes("grape"));
+// Point 26
+let alien_color = 'green';
+if (alien_color === 'green') {
+    console.log("Congratulations! You just earned 5 points.");
+}
